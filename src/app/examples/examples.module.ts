@@ -15,6 +15,10 @@ import { StockMarketEffects } from './stock-market/stock-market.effects';
 import { StockMarketService } from './stock-market/stock-market.service';
 import { ParentComponent } from './theming/parent/parent.component';
 import { ChildComponent } from './theming/child/child.component';
+import { SongSterrComponent } from './song-sterr/song-sterr.component';
+import { songSterrReducer } from '@app/examples/song-sterr/song-sterr.reducer';
+import { SongSterrService } from '@app/examples/song-sterr/song-sterr.service';
+import { SongSterrEffects } from '@app/examples/song-sterr/song-sterr.effects';
 
 @NgModule({
   imports: [
@@ -22,18 +26,20 @@ import { ChildComponent } from './theming/child/child.component';
     ExamplesRoutingModule,
     StoreModule.forFeature('examples', {
       todos: todosReducer,
-      stocks: stockMarketReducer
+      stocks: stockMarketReducer,
+      songSterr: songSterrReducer
     }),
-    EffectsModule.forFeature([TodosEffects, StockMarketEffects])
+    EffectsModule.forFeature([TodosEffects, StockMarketEffects, SongSterrEffects])
   ],
   declarations: [
     ExamplesComponent,
     TodosComponent,
     StockMarketComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    SongSterrComponent
   ],
-  providers: [StockMarketService]
+  providers: [StockMarketService, SongSterrService]
 })
 export class ExamplesModule {
   constructor() {}

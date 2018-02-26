@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="main-heading">Song sterr API</h1>
+    </div>
+  </div>
+
+  <div class="row align-items-end">
+    <div class="col-md-12 col-lg-12">
+      <form autocomplete="false">
+        <mat-input-container>
+          <input matInput placeholder="Artist" [value]="songSterr.artist" (keyup)="onArtistChange($event.target.value)">
+        </mat-input-container>
+      </form>
+      <mat-label *ngIf="!songSterr.loading && (!songSterr.songs || songSterr.songs.length == 0)">No results !</mat-label>
+    </div>
+    <mat-spinner *ngIf="songSterr.loading"></mat-spinner>
+    <div class="col-md-6 col-lg-4 fade-in" *ngFor="let song of songSterr.songs" [ngClass]="animateOnRouteEnter">
+      <mat-card>
+        <mat-card-title>{{song.title}}</mat-card-title>
+        <mat-card-subtitle>
+          {{song.artist.name}}
+        </mat-card-subtitle>
+        <mat-card-content *ngIf="song.chordsPresent">
+          <a mat-button href="http://www.songsterr.com/a/wa/song?id={{song.id}}" target="_blank">
+            <i class="fa fa-music"></i> Tab
+          </a>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

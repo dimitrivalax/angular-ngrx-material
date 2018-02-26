@@ -5,6 +5,7 @@ import { ExamplesComponent } from './examples/examples.component';
 import { TodosComponent } from './todos/todos.component';
 import { StockMarketComponent } from './stock-market/stock-market.component';
 import { ParentComponent } from './theming/parent/parent.component';
+import { SongSterrComponent } from '@app/examples/song-sterr/song-sterr.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,13 @@ const routes: Routes = [
         component: ParentComponent,
         data: {
           title: 'Theming'
+        }
+      },
+      {
+        path: 'song-sterr',
+        component: SongSterrComponent,
+        data: {
+          title: 'Song Sterr'
         }
       }
     ]

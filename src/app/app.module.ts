@@ -11,6 +11,8 @@ import { StaticModule } from './static';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 @NgModule({
   imports: [
     // angular
@@ -24,6 +26,12 @@ import { AppComponent } from './app.component';
     // features
     StaticModule,
     SettingsModule,
+
+
+    // Instrumentation must be imported after importing StoreModule (config is optional)
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+    }),
 
     // app
     AppRoutingModule
