@@ -11,6 +11,9 @@ import { StaticModule } from './static';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ServiceWorkerModule } from '@angular/service-worker'
+import { environment } from '../environments/environment';
+
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
@@ -26,6 +29,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     // features
     StaticModule,
     SettingsModule,
+
+    // Service worker
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
 
 
     // Instrumentation must be imported after importing StoreModule (config is optional)

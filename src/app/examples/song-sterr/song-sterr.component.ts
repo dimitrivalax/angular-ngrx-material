@@ -30,7 +30,9 @@ export class SongSterrComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((songSterr: any) => {
         this.songSterr = songSterr;
+
         this.cd.markForCheck();
+
         if (!this.intiatlized) {
           this.intiatlized = true;
           this.store.dispatch(new ActionSongSterrRetrieve({ artist: songSterr.artist }));

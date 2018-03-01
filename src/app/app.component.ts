@@ -49,7 +49,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private store: Store<any>,
     private router: Router,
     private titleService: Title
-  ) {}
+  ) {  }
 
   ngOnInit(): void {
     this.store
