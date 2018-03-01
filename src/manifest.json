@@ -1,0 +1,16 @@
+
+{
+  "short_name": "PWARRR",
+  "name": "ANGULAR NGRX PWA",
+  "icons": [
+    {
+      "src":"assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/about?utm_source=homescreen",
+  "background_color": "#f5d86b",
+  "theme_color": "#ff0000",
+  "display": "standalone"
+}
