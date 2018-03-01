@@ -6,6 +6,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#ff0000"/>
   <meta property="og:title" content="Angular NgRx Material Starter Project by @tomastrajan">
   <meta property="og:description" content="Angular NgRx Material Starter project with all the best practices, features and usage examples">
   <meta property="og:image" content="/angular-ngrx-material-starter/intro.3e2d7713f2cb475efa85.jpg">
@@ -17,6 +18,10 @@
   <style type="text/css">
     body, html {
       height: 100%;
+    }
+
+    .noscriptmsg{
+      margin: auto;
     }
     .app-loading {
       position: relative;
@@ -71,7 +76,15 @@
   </style>
 </head>
 <body>
-  <anms-root>
+    <noscript>
+        <style type="text/css">
+            #pagecontainer {display:none;}
+        </style>
+        <div class="noscriptmsg">
+        <h1>You don't have javascript enabled.  Good luck with that.</h1>
+        </div>
+    </noscript>
+  <anms-root id="pagecontainer">
     <div class="app-loading">
       <div class="logo"></div>
       <svg class="spinner" viewBox="25 25 50 50">
